@@ -1,7 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import InputField from "../../components/commons/forms/InputFleid";
-import SelectBox from "../../components/commons/forms/SelectBox";
+import { StyleSheet, View } from "react-native";
+import FormContainer from "../../components/commons/forms/FormContainer";
+import Title from "../../components/commons/forms/Title";
 import { useState } from "react";
 
 const DefaultInfoScreen = () => {
@@ -9,17 +8,36 @@ const DefaultInfoScreen = () => {
 
   return (
     <View style={styles.container}>
-      <SelectBox
-        selectedValue={selectedGender}
-        onValueChange={(value) => setSelectedGender(value)}
-        items={[
-          { label: "남성", value: "남성" },
-          { label: "여성", value: "여성" },
-        ]}
+      <Title title="기본정보" />
+      <FormContainer
+        label="성별"
+        type="selectBox"
+        fieldProps={{
+          selectedValue: selectedGender, 
+          onValueChange: setSelectedGender, 
+          items: [
+            { label: "남성", value: "남성" },
+            { label: "여성", value: "여성" },
+          ],
+        }}
       />
-      <InputField placeholder="나이를 입력해주세요." />
-      <InputField placeholder="몸무게를 입력해주세요." /><Text>kg</Text>
-      <InputField placeholder="키를 입력해주세요." /><Text>cm</Text>
+      <FormContainer
+        label="나이"
+        type="input"
+        fieldProps={{ placeholder: "나이를 입력해주세요." }}
+      />
+      <FormContainer
+        label="몸무게"
+        type="input"
+        fieldProps={{ placeholder: "몸무게를 입력해주세요." }}
+        unit="kg"
+      />
+      <FormContainer
+        label="키"
+        type="input"
+        fieldProps={{ placeholder: "키를 입력해주세요." }}
+        unit="cm"
+      />
     </View>
   );
 };
