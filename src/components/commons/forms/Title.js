@@ -7,9 +7,9 @@ const Title = ({ title }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 35,
     marginBottom: 10,
+    fontFamily: 'Roboto-Black',
   },
 });
 
