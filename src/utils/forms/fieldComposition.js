@@ -1,5 +1,5 @@
-import InputField from "../../components/commons/forms/InputField";
-import SelectBox from "../../components/commons/forms/SelectBox";
+import InputField from "../../components/forms/InputField"
+import SelectBox from "../../components/forms/SelectBox";
 
 export default function fieldComposition(type, fieldProps) {
   let ComponentToRender = null;

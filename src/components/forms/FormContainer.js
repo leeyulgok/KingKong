@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import Field from "./Field";
-import fieldComposition from "../../../utils/forms/fieldComposition";
+import fieldComposition from "../../utils/forms/fieldComposition"
 import { Text, View, StyleSheet } from "react-native";
 
 const FormContainer = ({ label, type, fieldProps, unit }) => {

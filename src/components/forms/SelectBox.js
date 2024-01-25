@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
-import { StyleSheet, View, Modal, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import FormModal from "../common/FormModal";
 
 const SelectBox = ({ selectedValue, onValueChange, items }) => {
   const [selectedItem, setSelectedItem] = useState(selectedValue);
@@ -19,39 +20,32 @@ const SelectBox = ({ selectedValue, onValueChange, items }) => {
         </View>
       </TouchableOpacity>
 
-      <Modal
-        transparent={true}
+      <FormModal
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
       >
-        <View style={styles.modalView}>
-          <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={selectedItem}
-              onValueChange={(itemValue, index) => {
-                if (index !== 0) {
-                  setSelectedItem(itemValue);
-                }
-              }}
-              style={styles.picker}
-            >
-              {items.map((item, index) => (
-                <Picker.Item
-                  key={index}
-                  label={item.label}
-                  value={item.value}
-                />
-              ))}
-            </Picker>
-            <TouchableOpacity
-              onPress={confirmSelection}
-              style={styles.confirmButton}
-            >
-              <Text style={styles.confirmText}>확인</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={selectedItem}
+            onValueChange={(itemValue, index) => {
+              if (index !== 0) {
+                setSelectedItem(itemValue);
+              }
+            }}
+            style={styles.picker}
+          >
+            {items.map((item, index) => (
+              <Picker.Item key={index} label={item.label} value={item.value} />
+            ))}
+          </Picker>
+          <TouchableOpacity
+            onPress={confirmSelection}
+            style={styles.confirmButton}
+          >
+            <Text style={styles.confirmText}>확인</Text>
+          </TouchableOpacity>
         </View>
-      </Modal>
+      </FormModal>
     </View>
   );
 };
