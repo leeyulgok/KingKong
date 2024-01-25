@@ -4,7 +4,9 @@ import { View, Text, StyleSheet } from 'react-native';
 const Field = ({ label, children }) => {
   return (
     <View style={styles.formControl}>
-      <Text style={styles.label}>{label}</Text>
+      <View style={styles.textBox}>
+        <Text style={styles.label}>{label}</Text>
+      </View>
       {children}
     </View>
   );
@@ -12,11 +14,17 @@ const Field = ({ label, children }) => {
 
 const styles = StyleSheet.create({
   formControl: {
-    marginBottom: 15,
+    flexDirection: "row",
+    gap: 5
+  },
+  textBox: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: "17%"
   },
   label: {
-    fontSize: 16,
-    marginBottom: 5,
+    fontSize: 17,
+    fontFamily: 'Roboto-Black',
   },
 });
 

@@ -11,7 +11,9 @@ const FormContainer = ({ label, type, fieldProps, unit }) => {
     <Container>
       <Field label={label}>
         <View style={styles.container}>
-          {ComponentToRender}
+          <View style={styles.fieldContainer}>
+            {ComponentToRender}
+          </View>
           {unit && <Text style={styles.unit}>{unit}</Text>}
         </View>
       </Field>
@@ -22,10 +24,17 @@ const FormContainer = ({ label, type, fieldProps, unit }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    gap: "5px",
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  fieldContainer: {
+    padding: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   unit: {
     alignSelf: "flex-end",
+    paddingBottom: 5
   }
 });
 

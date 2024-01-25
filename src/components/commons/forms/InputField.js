@@ -1,26 +1,28 @@
-import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import React from "react";
+import { TextInput, StyleSheet, View } from "react-native";
 
 const InputField = ({ placeholder, value, onChangeText, ...rest }) => {
   return (
-    <TextInput
-      style={styles.input}
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChangeText}
-      {...rest}
-    />
+    <View>
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChangeText}
+        {...rest}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   input: {
+    width: 200,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: "gray",
     padding: 10,
     borderRadius: 5,
-    marginTop: 10,
-    marginBottom: 10,
+    margin: 5,
   },
 });
 

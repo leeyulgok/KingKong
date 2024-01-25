@@ -7,11 +7,15 @@ const Container = ({ children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 15,
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
 
