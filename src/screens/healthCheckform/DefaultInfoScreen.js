@@ -4,8 +4,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import FormContainer from "../../components/commons/forms/FormContainer";
-import Title from "../../components/commons/forms/Title";
+import FormContainer from "../../components/forms/FormContainer";
+import Title from "../../components/forms/Title";
 import { useState } from "react";
 import FORM_INFO from "../../utils/constants/formInfo";
 
